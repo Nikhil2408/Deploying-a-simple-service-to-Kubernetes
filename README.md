@@ -84,7 +84,7 @@ They both give the same result.
   
 ![](images/4.png)
 
-<h4> 5. Verifying all the service's pods are up and running along with one testing pod i.e.busy box that I created </h4>
+<h4> 5. Verifying all the service's pods are up and running along with one testing pod i.e.busybox that I created </h4>
 
 ![](images/5.png)
 
@@ -111,4 +111,4 @@ kubectl exec busybox -- curl -s service_name
 ![](images/7.png)
 
 
-This is the data I am getting from one of the four replicas. Therefore I am able to successfully get the data from our store-product service.
+This is the data I am getting from one of the four replicas. Therefore I am able to successfully get the data from our store-products service.
