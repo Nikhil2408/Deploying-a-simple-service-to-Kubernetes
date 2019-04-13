@@ -43,12 +43,64 @@ EOF
 ```
 ![](images/1.png)
 
-<h4> 2. Check out the deployment you created on the master node </h4>
+<h4> 2. Checking out the deployment I created on the master node </h4>
 
 ```javascript
 kubectl get deployments
 ```
 ![](images/2.png)
+
+<h4> 3. Creating the service for the store-products pods </h4>
+
+```javascript
+cat << EOF | kubectl apply -f -
+kind: Service
+apiVersion: v1
+metadata:
+  name: store-products
+spec:
+  selector:
+    app: store-products
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+EOF
+```
+![](images/3.png)
+
+<h4> 4. Making sure the service is up in the cluster </h4>
+
+```javascipt
+kubectl get svc store-products
+```
+<p align="center"><b> OR </b></p>
+
+```javascript
+kubectl get service store-products
+```
+
+They both give the same result.
+  
+![](images/4.png)
+
+<h4> 5. Verifying all the service's pods are up and running along with one testing pod i.e.busy box that I created </h4>
+
+![](images/5.png)
+
+<h4> 6. Using kubectl exec to query the store-products service from the busybox testing pod </h4>
+
+```javascript
+kubectl exec busybox -- curl -s service_name
+```
+![](images/6.png)
+
+<p align="center"><b> OR </b></p>
+
+```javascript
+kubectl exec busybox -- curl -s service_ip
+```
+![](images/8.png)
 
 
 
