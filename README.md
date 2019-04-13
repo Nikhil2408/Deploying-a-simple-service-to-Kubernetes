@@ -91,7 +91,7 @@ They both give the same result.
 <h4> 6. Using kubectl exec to query the store-products service from the busybox testing pod </h4>
 
 ```javascript
-kubectl exec busybox -- curl -s service_name
+kubectl exec busybox -- curl service_name
 ```
 ![](images/6.png)
 
@@ -102,6 +102,13 @@ kubectl exec busybox -- curl -s service_ip
 ```
 ![](images/8.png)
 
+When using kubectl exec command, some extra information is being displayed. <b> -s </b> is to suppress some extraneous information that I don't need.
+
+```javascript
+kubectl exec busybox -- curl -s service_name
+```
+
+![](images/7.png)
 
 
-
+This is the data I am getting from one of the four replicas. Therefore I am able to successfully get the data from our store-product service.
