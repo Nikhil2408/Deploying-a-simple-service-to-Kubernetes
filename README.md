@@ -9,3 +9,47 @@ We already have a public Docker image for the store-product app provided by Linu
 <p align="center">
   <img src="https://github.com/Nikhil2408/Demo/blob/master/images/service%20in%20k8s.png">
 </p>
+
+<h3> Solution: </h3>
+
+<h4> 1. Creating the deployment for the store-product service with four replicas.</h4>
+
+On the master node, creating the deployment with four replicas
+
+```javascript
+cat << EOF | kubectl apply -f -
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: store-products
+  labels:
+    app: store-products
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: store-products
+  template:
+    metadata:
+      labels:
+        app: store-products
+    spec:
+      containers:
+      - name: store-products
+        image: linuxacademycontent/store-products:1.0.0
+        ports:
+        - containerPort: 80
+EOF
+```
+![](images/1.png)
+
+<h4> 2. Check out the deployment you created on the master node </h4>
+
+```javascript
+kubectl get deployments
+```
+![](images/2.png)
+
+
+
+
