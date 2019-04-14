@@ -1,5 +1,9 @@
 # Deploying a simple service to Kubernetes
 
+<h2> Attribution </h2>
+
+Hello everyone, you are welcome to make use of this repository and learn from it but please do not copy without giving attribution to the author.
+
 <h3>Task:</h3>
 
 Suppose a team manages an online storefront. They want a simple service in their kubernetes cluster that is able to provide a list of products. One pod will use this service to access the service's pods. Deploy the service's pods to the cluster and create a k8s service to provide access to all the service's pods. Deploy 4 replicas of the service pod.
