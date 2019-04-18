@@ -11,7 +11,7 @@ Suppose a team manages an online storefront. They want a simple service in their
 We already have a public Docker image for the store-product app provided by LinuxAcademy- <b>linuxacademycontent/store-products:1.0.0</b>
 
 <p align="center">
-  <img src="https://github.com/Nikhil2408/Demo/blob/master/images/service%20in%20k8s.png">
+  <img src="https://github.com/Nikhil2408/Deploying-a-simple-service-to-Kubernetes/blob/master/images/service%20in%20k8s.png">
 </p>
 
 <h3> Solution: </h3>
